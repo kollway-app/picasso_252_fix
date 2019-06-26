@@ -54,7 +54,9 @@ class DeferredRequestCreator implements ViewTreeObserver.OnPreDrawListener {
       return true;
     }
 
+    target.removeOnAttachStateChangeListener(this);
     vto.removeOnPreDrawListener(this);
+    this.target.clear();
 
     this.creator.unfit().resize(width, height).into(target, callback);
     return true;
