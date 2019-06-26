@@ -30,7 +30,7 @@ class DeferredRequestCreator implements OnPreDrawListener, OnAttachStateChangeLi
 
   DeferredRequestCreator(RequestCreator creator, ImageView target, Callback callback) {
     this.creator = creator;
-    this.target = new WeakReference<>(target);
+    this.target = new WeakReference<ImageView>(target);
     this.callback = callback;
 
     target.addOnAttachStateChangeListener(this);
